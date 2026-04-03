@@ -208,14 +208,6 @@
             padding: 0.8rem;
             border-radius: 20px;
         }
-        .accounts-list {
-            max-height: 200px;
-            overflow-y: auto;
-            background: var(--bg);
-            padding: 0.5rem;
-            border-radius: 20px;
-            margin: 0.5rem 0;
-        }
     </style>
 </head>
 <body>
@@ -273,23 +265,6 @@
         customCodeModifications: [],
         openRouterApiKey: localStorage.getItem('openrouter_api_key') || "",
         openRouterEnabled: false,
-        // حسابات جوجل المخزنة (13 حساباً)
-        googleAccounts: [
-            "abdualrahmanahmedalsarory@gmail.com",
-            "qa8590669@gmail.com",
-            "asdfghjklwertyuiop800@gmail.com",
-            "yeusjtiryjitgj@gmail.com",
-            "XXCXCZXC213@gmail.com",
-            "XXCXCZXc132@gmail.com",
-            "amarqwertyqwertyi9t8j7@gmail.com",
-            "nkoplmmlpoknji@gmail.com",
-            "tyuiopfghjklcvbnm24@gmail.com",
-            "cfrvgtr2@gmail.com",
-            "suieyueeu@gmail.com",
-            "biutyurij@gmail.com",
-            "siwdudoiu@gmail.com"
-        ],
-        // مفاتيح التخزين للمنصات (يمكن ربطها بحسابات جوجل)
         storageKeys: {
             mega: "", pcloud: "", icedrive: "", googleDrive: "", terabox: "", megatech: ""
         }
@@ -307,7 +282,7 @@
 
     // --------------------------- تحميل وحفظ البيانات ---------------------------
     function loadStorage() {
-        let stored = localStorage.getItem('ai_site_data_v12');
+        let stored = localStorage.getItem('ai_site_data_v11');
         if(stored) {
             let data = JSON.parse(stored);
             currentUser = data.currentUser;
@@ -321,21 +296,6 @@
             systemConfig = { ...systemConfig, ...(data.systemConfig || {}) };
             if (!systemConfig.customCodeModifications) systemConfig.customCodeModifications = [];
             if (!systemConfig.storageKeys) systemConfig.storageKeys = { mega: "", pcloud: "", icedrive: "", googleDrive: "", terabox: "", megatech: "" };
-            if (!systemConfig.googleAccounts) systemConfig.googleAccounts = [
-                "abdualrahmanahmedalsarory@gmail.com",
-                "qa8590669@gmail.com",
-                "asdfghjklwertyuiop800@gmail.com",
-                "yeusjtiryjitgj@gmail.com",
-                "XXCXCZXC213@gmail.com",
-                "XXCXCZXc132@gmail.com",
-                "amarqwertyqwertyi9t8j7@gmail.com",
-                "nkoplmmlpoknji@gmail.com",
-                "tyuiopfghjklcvbnm24@gmail.com",
-                "cfrvgtr2@gmail.com",
-                "suieyueeu@gmail.com",
-                "biutyurij@gmail.com",
-                "siwdudoiu@gmail.com"
-            ];
         } else {
             improvementProposals = [{ id:1, title:"تطوير خوارزمية الصور", desc:"إضافة فلتر احترافي", status:"pending" }];
         }
@@ -343,7 +303,7 @@
         updateUIafterLogin();
     }
     function saveStorage() {
-        localStorage.setItem('ai_site_data_v12', JSON.stringify({
+        localStorage.setItem('ai_site_data_v11', JSON.stringify({
             currentUser, ownerData, firewallLevel, firewallBreachAlertSent,
             improvementProposals, complaintsList, artworks, usersDB,
             systemConfig
@@ -1001,11 +961,10 @@
                     <button data-pane="owner">⚙️ لوحة المالك</button>
                     <button data-pane="konan">📦 كونان - تحديث الموقع</button>
                     <button data-pane="kitowa">🔄 كيتوا كيت & كونوسكي جي (نسخ التطبيقات)</button>
-                    <button data-pane="languageExporter">📚 كاشف ألغات</button>
+                    <button data-pane="languageExporter">📚 بلكاشف ألغات</button>
                     <button data-pane="jiraiya">🧠 جيرايا (مزود الأوامر)</button>
                     <button data-pane="sanei">🧠 الصانع</button>
                     <button data-pane="security">🛡️ نظام الحماية الصارم</button>
-                    <button data-pane="textEdit">✏️ تعديل مفتاحية الكلام</button>
                 </div>
                 <div id="pane-keys" class="settings-pane"></div>
                 <div id="pane-aiagents" class="settings-pane"></div>
@@ -1017,7 +976,6 @@
                 <div id="pane-jiraiya" class="settings-pane"></div>
                 <div id="pane-sanei" class="settings-pane"></div>
                 <div id="pane-security" class="settings-pane"></div>
-                <div id="pane-textEdit" class="settings-pane"></div>
             </div>
         `;
         // تعبئة المحتويات
@@ -1031,7 +989,6 @@
         renderJiraiyaPane(document.getElementById('pane-jiraiya'));
         renderSaneiPane(document.getElementById('pane-sanei'));
         renderSecurityPane(document.getElementById('pane-security'));
-        renderTextEditPane(document.getElementById('pane-textEdit'));
 
         // إضافة أحداث التبويب
         document.querySelectorAll('#ownerSettingsTabs button').forEach(btn => {
@@ -1049,7 +1006,7 @@
     function renderKeysPane(container) {
         container.innerHTML = `
             <h3>🔑 مفاتيح تشغيل النظام (ربط منصات التخزين)</h3>
-            <p>تمت إضافة 13 حساب جوجل تلقائياً. يمكنك استخدام المساحات المخزنة عند الحاجة. أدخل مفاتيح API للمنصات الإضافية إن وجدت.</p>
+            <p>أدخل مفاتيح API أو رموز الوصول للمنصات التالية. يمكنك استخدام حسابات Google المتعددة عبر تسجيل الدخول المنفصل.</p>
             <div class="storage-keys-grid">
                 <div class="storage-key-item"><label>Mega (Token):</label><input id="megaKey" placeholder="مفتاح Mega" value="${systemConfig.storageKeys.mega}"></div>
                 <div class="storage-key-item"><label>pCloud (Token):</label><input id="pcloudKey" placeholder="مفتاح pCloud" value="${systemConfig.storageKeys.pcloud}"></div>
@@ -1059,11 +1016,7 @@
                 <div class="storage-key-item"><label>MegaTech Photos (Token):</label><input id="megatechKey" placeholder="مفتاح MegaTech" value="${systemConfig.storageKeys.megatech}"></div>
             </div>
             <button id="saveStorageKeysBtn" class="accent">💾 حفظ المفاتيح</button>
-            <h4>📧 حسابات جوجل المتاحة (13 حساباً):</h4>
-            <div class="accounts-list">
-                ${systemConfig.googleAccounts.map(acc => `<div>✅ ${acc}</div>`).join('')}
-            </div>
-            <p class="command-suggestions">💡 هذه الحسابات تستخدم لتوفير مساحة تخزين إضافية عند الحاجة. النظام يديرها تلقائياً.</p>
+            <p class="command-suggestions">💡 يمكنك استخدام 10 حسابات Google بسهولة عبر إضافة مفاتيح متعددة لكل منصة. النظام يخزنها محلياً.</p>
         `;
         document.getElementById('saveStorageKeysBtn').onclick = () => {
             systemConfig.storageKeys.mega = document.getElementById('megaKey').value;
@@ -1250,8 +1203,8 @@
 
     function renderLanguageExporterPane(container) {
         container.innerHTML = `
-            <h3>📚 كاشف ألغات - تصدير قواعد لغوية ضخمة</h3>
-            <p>يستطيع كاشف ألغات تصدير بيانات لغوية ضخمة (عربية، إنجليزية، صينية، لهجات يمنية) بناءً على أمرك. سيتم تخزين البيانات في السحابة المربوطة.</p>
+            <h3>📚 بلكاشف ألغات - تصدير قواعد لغوية ضخمة</h3>
+            <p>يستطيع بلكاشف ألغات تصدير بيانات لغوية ضخمة (عربية، إنجليزية، صينية، لهجات يمنية) بناءً على أمرك. سيتم تخزين البيانات في السحابة المربوطة.</p>
             <select id="languageSelect">
                 <option value="ar">العربية الفصحى</option>
                 <option value="en">الإنجليزية</option>
@@ -1274,8 +1227,8 @@
     function renderJiraiyaPane(container) {
         container.innerHTML = `
             <h3>🧠 جيرايا - مزود الأوامر (أكواد وعربية)</h3>
-            <p>جيرايا يوفر الأوامر البرمجية والعربية لجميع الذكاءات في الموقع. يمكنه فهم الأوامر القانونية وغير القانونية (تلتزم باستخدامها إيجابياً). أدخل وصفاً للأمر الذي تريد الحصول عليه.</p>
-            <textarea id="jiraiyaCommand" rows="4" placeholder="أدخل الأمر الذي تريد أن يفهمه الذكاءات أو الكود الذي تريد مساعدة فيه..."></textarea>
+            <p>جيرايا يوفر الأوامر البرمجية والعربية لجميع الذكاءات في الموقع. يمكنه فهم الأوامر القانونية وغير القانونية (تلتزم باستخدامها إيجابياً).</p>
+            <textarea id="jiraiyaCommand" rows="4" placeholder="أدخل الأمر الذي تريد أن يفهمه الذكاءات..."></textarea>
             <button id="processJiraiyaBtn" class="accent">⚙️ معالجة الأمر (جيرايا)</button>
             <div id="jiraiyaOutput"></div>
         `;
@@ -1286,7 +1239,7 @@
             outputDiv.innerHTML = "<p>جيرايا يعالج الأمر...</p>";
             let result = "";
             if(systemConfig.openRouterApiKey && systemConfig.openRouterEnabled) {
-                result = await understandArabicWithAI(`قم بتزويد الذكاءات بفهم عميق للأمر التالي، وأعطني تعليمات واضحة حول كيفية تطبيقه: ${cmd}`);
+                result = await understandArabicWithAI(`قم بتزويد الذكاءات بفهم عميق للأمر التالي: ${cmd}`);
             } else {
                 result = `تم فهم الأمر: ${cmd}. (فعّل OpenRouter لفهم أعمق)`;
             }
@@ -1335,44 +1288,6 @@
             const logDiv = document.getElementById('securityLog');
             logDiv.innerHTML = `<p class="card">⚠️ تم اكتشاف محاولة تمرد من الذكاء رقم ${rebellionCount}. تم قمعه وتعطيله مؤقتاً. تم إشعار المالك عبر واتساب.</p>`;
             notifyOwnerViaWhatsapp(`⚠️ نظام الأمان: تم قمع محاولة تمرد من أحد الذكاءات.`);
-        };
-    }
-
-    function renderTextEditPane(container) {
-        container.innerHTML = `
-            <h3>✏️ تعديل مفتاحية الكلام في منصة</h3>
-            <p>أدخل النص أو الكلمة التي تريد تغييرها داخل الموقع، ثم النص الجديد. حدد مكان النص (مثلاً: العنوان الرئيسي، شريط التنقل، إلخ).</p>
-            <label>النص الحالي (أو الكلمة المفتاحية):</label>
-            <input id="oldText" placeholder="مثال: الرئيسية">
-            <label>النص الجديد:</label>
-            <input id="newText" placeholder="مثال: الصفحة الرئيسية">
-            <label>مكان التعديل (اختياري، مثل: navbar, hero, title):</label>
-            <input id="locationHint" placeholder="اختر جزء الموقع">
-            <button id="applyTextChangeBtn" class="accent">✏️ تطبيق التغيير</button>
-            <div id="textChangeResult"></div>
-        `;
-        document.getElementById('applyTextChangeBtn').onclick = () => {
-            const oldText = document.getElementById('oldText').value;
-            const newText = document.getElementById('newText').value;
-            if(!oldText || !newText) { alert("الرجاء إدخال النص القديم والجديد."); return; }
-            let changed = false;
-            // استبدال النص في كل محتوى الصفحة
-            const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, null, false);
-            const nodes = [];
-            while(walker.nextNode()) nodes.push(walker.currentNode);
-            for(let node of nodes) {
-                if(node.nodeValue.includes(oldText)) {
-                    node.nodeValue = node.nodeValue.replace(new RegExp(oldText, 'g'), newText);
-                    changed = true;
-                }
-            }
-            const resultDiv = document.getElementById('textChangeResult');
-            if(changed) {
-                resultDiv.innerHTML = `<p>✅ تم تغيير "${oldText}" إلى "${newText}" في جميع أجزاء الموقع.</p>`;
-                saveStorage(); // حفظ أي تغييرات إن لزم
-            } else {
-                resultDiv.innerHTML = `<p>⚠️ لم يتم العثور على النص "${oldText}" في الموقع.</p>`;
-            }
         };
     }
 
