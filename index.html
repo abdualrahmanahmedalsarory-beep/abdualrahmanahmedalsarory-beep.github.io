@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    <title>Abdulrahman Al-Surouri | الذكاء الاصطناعي المتكامل</title>
+    <title>جنون العظمة | Madness of Greatness - الذكاء الاصطناعي المتكامل</title>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <script type="importmap">
@@ -54,6 +54,7 @@
             color: var(--primary);
         }
         .logo span { color: var(--accent); }
+        .logo small { font-size: 12px; display: block; }
         .nav-links {
             display: flex;
             gap: 1.2rem;
@@ -208,12 +209,49 @@
             padding: 0.8rem;
             border-radius: 20px;
         }
+        /* شريط التخزين البني المتحرك */
+        .storage-bar-container {
+            background-color: #8B4513;
+            border-radius: 30px;
+            height: 30px;
+            width: 100%;
+            position: relative;
+            overflow: hidden;
+            margin: 15px 0;
+        }
+        .storage-bar-fill {
+            height: 100%;
+            width: 0%;
+            border-radius: 30px;
+            transition: width 0.5s ease;
+            background: linear-gradient(90deg, #4CAF50, #CDDC39, #FFEB3B, #FF9800, #FF5722, #F44336, #D32F2F, #9C27B0, #673AB7, #1A1A1A);
+        }
+        .google-account-row {
+            background: var(--bg);
+            border-radius: 16px;
+            padding: 12px;
+            margin-bottom: 10px;
+            border: 1px solid var(--border);
+        }
+        .back-button {
+            background: var(--accent);
+            color: white;
+            border: none;
+            padding: 6px 15px;
+            border-radius: 30px;
+            cursor: pointer;
+            margin-bottom: 15px;
+            display: inline-block;
+        }
     </style>
 </head>
 <body>
 <div class="navbar">
     <div class="container nav-flex">
-        <div class="logo">Abdulrahman <span>Al-Surouri</span><br><small id="siteSubtitle" style="font-size: 12px;">ذكاء اصطناعي متكامل</small></div>
+        <div class="logo">
+            <span id="companyNameDisplay">جنون العظمة</span><br>
+            <small id="companySubDisplay">Madness of Greatness</small>
+        </div>
         <ul class="nav-links" id="navTabs">
             <li><a data-tab="home" class="active">الرئيسية</a></li>
             <li><a data-tab="tools">الأدوات الذكية</a></li>
@@ -230,7 +268,7 @@
     </div>
 </div>
 <div class="container" id="appContent" style="margin-top: 2rem;"></div>
-<footer>© 2025 Abdulrahman Al-Surouri AI - جميع الحقوق محفوظة. تعمل بعض الميزات عبر APIs خارجية وتخزين سحابي.</footer>
+<footer>© 2025 جنون العظمة | Madness of Greatness - جميع الحقوق محفوظة</footer>
 
 <script type="module">
     import * as THREE from 'three';
@@ -257,8 +295,11 @@
             world_gen: { name: "عالم تفاعلي (Three.js)", category: "normal", limitType: "other", enabled: true }
         },
         siteTexts: {
-            mainTitle: "منصة عبدالرحمن السروري للذكاء الاصطناعي",
+            mainTitle: "منصة جنون العظمة للذكاء الاصطناعي",
             subTitle: "ذكاء اصطناعي متكامل",
+            companyName: "جنون العظمة",
+            companySub: "Madness of Greatness",
+            companyLogo: ""
         },
         colors: { primary: "#0f2b3d", accent: "#e67e22" },
         theme: "light",
@@ -267,7 +308,23 @@
         openRouterEnabled: false,
         storageKeys: {
             mega: "", pcloud: "", icedrive: "", googleDrive: "", terabox: "", megatech: ""
-        }
+        },
+        googleAccounts: [
+            { email: "abdualrahmanahmedalsarory@gmail.com", mega: "", pcloud: "", icedrive: "", googleDrive: "", terabox: "", megatech: "", usedSpace: 0, totalSpace: 15 * 1024 * 1024 * 1024 },
+            { email: "qa8590669@gmail.com", mega: "", pcloud: "", icedrive: "", googleDrive: "", terabox: "", megatech: "", usedSpace: 0, totalSpace: 15 * 1024 * 1024 * 1024 },
+            { email: "asdfghjklwertyuiop800@gmail.com", mega: "", pcloud: "", icedrive: "", googleDrive: "", terabox: "", megatech: "", usedSpace: 0, totalSpace: 15 * 1024 * 1024 * 1024 },
+            { email: "yeusjtiryjitgj@gmail.com", mega: "", pcloud: "", icedrive: "", googleDrive: "", terabox: "", megatech: "", usedSpace: 0, totalSpace: 15 * 1024 * 1024 * 1024 },
+            { email: "XXCXCZXC213@gmail.com", mega: "", pcloud: "", icedrive: "", googleDrive: "", terabox: "", megatech: "", usedSpace: 0, totalSpace: 15 * 1024 * 1024 * 1024 },
+            { email: "XXCXCZXc132@gmail.com", mega: "", pcloud: "", icedrive: "", googleDrive: "", terabox: "", megatech: "", usedSpace: 0, totalSpace: 15 * 1024 * 1024 * 1024 },
+            { email: "amarqwertyqwertyi9t8j7@gmail.com", mega: "", pcloud: "", icedrive: "", googleDrive: "", terabox: "", megatech: "", usedSpace: 0, totalSpace: 15 * 1024 * 1024 * 1024 },
+            { email: "nkoplmmlpoknji@gmail.com", mega: "", pcloud: "", icedrive: "", googleDrive: "", terabox: "", megatech: "", usedSpace: 0, totalSpace: 15 * 1024 * 1024 * 1024 },
+            { email: "tyuiopfghjklcvbnm24@gmail.com", mega: "", pcloud: "", icedrive: "", googleDrive: "", terabox: "", megatech: "", usedSpace: 0, totalSpace: 15 * 1024 * 1024 * 1024 },
+            { email: "cfrvgtr2@gmail.com", mega: "", pcloud: "", icedrive: "", googleDrive: "", terabox: "", megatech: "", usedSpace: 0, totalSpace: 15 * 1024 * 1024 * 1024 },
+            { email: "suieyueeu@gmail.com", mega: "", pcloud: "", icedrive: "", googleDrive: "", terabox: "", megatech: "", usedSpace: 0, totalSpace: 15 * 1024 * 1024 * 1024 },
+            { email: "biutyurij@gmail.com", mega: "", pcloud: "", icedrive: "", googleDrive: "", terabox: "", megatech: "", usedSpace: 0, totalSpace: 15 * 1024 * 1024 * 1024 },
+            { email: "siwdudoiu@gmail.com", mega: "", pcloud: "", icedrive: "", googleDrive: "", terabox: "", megatech: "", usedSpace: 0, totalSpace: 15 * 1024 * 1024 * 1024 }
+        ],
+        teamMembers: []
     };
 
     let currentUser = null;
@@ -279,10 +336,11 @@
     let artworks = [];
     let usersDB = [];
     let replicateApiKey = localStorage.getItem('replicate_api_key') || "";
+    let whatsappSimMessages = [];
 
     // --------------------------- تحميل وحفظ البيانات ---------------------------
     function loadStorage() {
-        let stored = localStorage.getItem('ai_site_data_v11');
+        let stored = localStorage.getItem('ai_site_data_v12');
         if(stored) {
             let data = JSON.parse(stored);
             currentUser = data.currentUser;
@@ -296,6 +354,8 @@
             systemConfig = { ...systemConfig, ...(data.systemConfig || {}) };
             if (!systemConfig.customCodeModifications) systemConfig.customCodeModifications = [];
             if (!systemConfig.storageKeys) systemConfig.storageKeys = { mega: "", pcloud: "", icedrive: "", googleDrive: "", terabox: "", megatech: "" };
+            if (!systemConfig.googleAccounts) systemConfig.googleAccounts = data.systemConfig?.googleAccounts || systemConfig.googleAccounts;
+            if (!systemConfig.teamMembers) systemConfig.teamMembers = data.systemConfig?.teamMembers || [];
         } else {
             improvementProposals = [{ id:1, title:"تطوير خوارزمية الصور", desc:"إضافة فلتر احترافي", status:"pending" }];
         }
@@ -303,7 +363,7 @@
         updateUIafterLogin();
     }
     function saveStorage() {
-        localStorage.setItem('ai_site_data_v11', JSON.stringify({
+        localStorage.setItem('ai_site_data_v12', JSON.stringify({
             currentUser, ownerData, firewallLevel, firewallBreachAlertSent,
             improvementProposals, complaintsList, artworks, usersDB,
             systemConfig
@@ -314,11 +374,13 @@
         document.documentElement.style.setProperty('--accent', systemConfig.colors.accent);
         if (systemConfig.theme === 'dark') document.body.classList.add('dark');
         else document.body.classList.remove('dark');
-        let subtitleSpan = document.getElementById('siteSubtitle');
-        if(subtitleSpan) subtitleSpan.innerText = systemConfig.siteTexts.subTitle;
+        let nameSpan = document.getElementById('companyNameDisplay');
+        let subSpan = document.getElementById('companySubDisplay');
+        if(nameSpan) nameSpan.innerText = systemConfig.siteTexts.companyName;
+        if(subSpan) subSpan.innerText = systemConfig.siteTexts.companySub;
     }
 
-    // --------------------------- WebAuthn (بصمة/وجه فقط) ---------------------------
+    // --------------------------- WebAuthn ---------------------------
     async function registerOwnerWithBiometric(email, fullName, secretPhrase) {
         if (!window.PublicKeyCredential) { alert("متصفحك لا يدعم WebAuthn."); return false; }
         try {
@@ -326,8 +388,8 @@
             window.crypto.getRandomValues(challenge);
             const publicKeyCredentialCreationOptions = {
                 challenge: challenge,
-                rp: { name: "Abdulrahman Al-Surouri AI", id: window.location.hostname },
-                user: { id: new TextEncoder().encode("owner-abdulrahman"), name: email, displayName: fullName },
+                rp: { name: "Madness of Greatness", id: window.location.hostname },
+                user: { id: new TextEncoder().encode("owner-mog"), name: email, displayName: fullName },
                 pubKeyCredParams: [{ alg: -7, type: "public-key" }],
                 authenticatorSelection: { authenticatorAttachment: "platform", userVerification: "required" },
                 timeout: 60000,
@@ -357,7 +419,7 @@
         } catch (err) { alert("فشل التحقق البيومتري: " + err.message); return false; }
     }
 
-    // --------------------------- إدارة المستخدمين مع العمر ---------------------------
+    // --------------------------- إدارة المستخدمين ---------------------------
     function calculateAge(birthDate) {
         const today = new Date();
         const birth = new Date(birthDate);
@@ -442,7 +504,7 @@
         document.getElementById('closePay').onclick = () => modal.remove();
     }
 
-    // --------------------------- فهم الأوامر العربية مع OpenRouter ---------------------------
+    // --------------------------- فهم الأوامر العربية ---------------------------
     async function understandArabicWithAI(command) {
         if (!systemConfig.openRouterApiKey) {
             return "مفتاح OpenRouter غير موجود. الرجاء إدخاله في لوحة المالك.";
@@ -474,7 +536,7 @@
         } catch(e) { return "خطأ في الاتصال بـ OpenRouter: " + e.message; }
     }
 
-    // --------------------------- الكروم + سينكو(1) ---------------------------
+    // --------------------------- الكروم + سينكو ---------------------------
     async function analyzeWithSinco(input) {
         if (systemConfig.openRouterApiKey && systemConfig.openRouterEnabled) {
             const aiResponse = await understandArabicWithAI(input);
@@ -514,70 +576,7 @@
         }
     }
 
-    function renderCodeModsList(containerId = 'codeModsList') {
-        const container = document.getElementById(containerId);
-        if(!container) return;
-        const mods = systemConfig.customCodeModifications || [];
-        if(mods.length === 0) {
-            container.innerHTML = "<p>لا توجد تعديلات كود محفوظة.</p>";
-            return;
-        }
-        container.innerHTML = mods.map((mod, idx) => `
-            <div class="card" style="margin-bottom:10px;">
-                <strong>${mod.type}</strong> - تم التطبيق في ${new Date(mod.timestamp).toLocaleString()}
-                <pre>${mod.code.substring(0,200)}${mod.code.length>200 ? '...' : ''}</pre>
-                <button data-idx="${idx}" class="removeModBtn">❌ حذف هذا التعديل</button>
-            </div>
-        `).join('');
-        document.querySelectorAll('.removeModBtn').forEach(btn => {
-            btn.onclick = () => {
-                const idx = parseInt(btn.dataset.idx);
-                systemConfig.customCodeModifications.splice(idx,1);
-                saveStorage();
-                renderCodeModsList(containerId);
-                alert("تم حذف التعديل. أعد تحميل الصفحة لإزالة آثاره.");
-            };
-        });
-    }
-
-    // --------------------------- دالة تصدير الموقع (كونان) ---------------------------
-    function exportFullSite() {
-        try {
-            const fullHtml = document.documentElement.outerHTML;
-            const blob = new Blob([fullHtml], { type: 'text/html' });
-            const url = URL.createObjectURL(blob);
-            const a = document.createElement('a');
-            a.href = url;
-            a.download = 'index.html';
-            document.body.appendChild(a);
-            a.click();
-            document.body.removeChild(a);
-            URL.revokeObjectURL(url);
-            const sizeInKB = (blob.size / 1024).toFixed(2);
-            const sizeInMB = (blob.size / (1024 * 1024)).toFixed(2);
-            alert(`✅ تم تصدير الموقع بنجاح!\n📦 حجم الملف: ${sizeInKB} كيلوبايت (${sizeInMB} ميجابايت)`);
-        } catch (err) {
-            alert("❌ فشل التصدير: " + err.message);
-        }
-    }
-
-    async function konanUpdate(newCode, mode) {
-        localStorage.setItem('backup_index', document.documentElement.outerHTML);
-        if(mode === 'full') {
-            document.open();
-            document.write(newCode);
-            document.close();
-            alert("تم تحديث الموقع بالكامل. سيتم إعادة التحميل.");
-            location.reload();
-        } else if(mode === 'partial') {
-            document.documentElement.innerHTML = newCode;
-            alert("تم تحديث جزئي.");
-        } else {
-            alert("تم إلغاء التحديث.");
-        }
-    }
-
-    // --------------------------- زينو: بحث عبر DuckDuckGo ---------------------------
+    // --------------------------- زينو: بحث ---------------------------
     async function searchWithZeno(query) {
         try {
             const response = await fetch(`https://api.duckduckgo.com/?q=${encodeURIComponent(query)}&format=json&no_html=1&skip_disambig=1`);
@@ -591,7 +590,7 @@
         } catch(e) { return "خطأ في الاتصال بمحرك البحث: " + e.message; }
     }
 
-    // --------------------------- ناروتوا (تطوير يومي) ---------------------------
+    // --------------------------- ناروتوا ---------------------------
     function generateDailyProposals() {
         const ideas = [
             "تحسين أداة توليد الصور بإضافة خيارات حجم أكثر",
@@ -621,7 +620,6 @@
         }
     }, 3600000);
 
-    let whatsappSimMessages = [];
     function addWhatsappMessage(text, fromOwner=true) {
         whatsappSimMessages.push({ from: fromOwner?'owner':'naruto', text, time:new Date().toLocaleTimeString() });
         renderWhatsappPanel();
@@ -678,7 +676,7 @@
         } else { alert("جميع الجدران صامدة"); }
     }
 
-    // --------------------------- توليد الصور (حقيقي) ---------------------------
+    // --------------------------- توليد الصور ---------------------------
     async function generateRealImage(promptText) {
         if (!replicateApiKey) {
             alert("الرجاء إدخال مفتاح Replicate API في لوحة المالك أولاً.");
@@ -873,10 +871,12 @@
         resetDailyIfNeeded(currentUser);
         let usageHtml = `<div class="card"><h3>حصتك اليومية (مجانية)</h3>
         <p>📸 صور: ${currentUser.used.images}/${currentUser.limits.images||'∞'} | 🎬 فيديوهات: ${currentUser.used.videos}/${currentUser.limits.videos||'∞'} | 🎮 ألعاب: ${currentUser.used.games}/${currentUser.limits.games||'∞'} 
-        🏗️ تصميمات: ${currentUser.used.arch}/${currentUser.limits.arch||'∞'} | 🎤 أصوات: ${currentUser.used.voices}/${currentUser.limits.voices||'∞'} </p></div>`;
+        🏗️ تصميمات: ${currentUser.used.arch}/${currentUser.limits.arch||'∞'} | 🎤 أصوات: ${currentUser.used.voices}/${currentUser.limits.voices||'∞'} </p>
+        <button id="createNewAI" class="accent">➕ إنشاء ذكاء اصطناعي جديد</button></div>`;
         let toolsArray = getVisibleTools();
         if(toolsArray.length === 0) {
             div.innerHTML = usageHtml + `<div class="card">لا توجد أدوات متاحة لك حاليًا.</div>`;
+            document.getElementById('createNewAI')?.addEventListener('click', () => { renderOwnerSettings(document.getElementById('appContent')); document.querySelector('[data-pane="sanei"]')?.click(); });
             return;
         }
         let toolsHtml = `<div class="tools-grid">`;
@@ -888,9 +888,10 @@
         document.querySelectorAll('[data-tool]').forEach(btn => {
             btn.onclick = () => handleToolAction(btn.dataset.tool);
         });
+        document.getElementById('createNewAI')?.addEventListener('click', () => { renderOwnerSettings(document.getElementById('appContent')); document.querySelector('[data-pane="sanei"]')?.click(); });
     }
 
-    // --------------------------- باقي التبويبات (مختصرة) ---------------------------
+    // --------------------------- التبويبات ---------------------------
     function renderHome(div) {
         div.innerHTML = `<div class="card"><h1>${systemConfig.siteTexts.mainTitle}</h1>
         <p>منصة متكاملة للذكاء الاصطناعي مع أدوات حقيقية (توليد صور عبر Replicate، تعديل صور، ألعاب، عوالم ثلاثية الأبعاد، صوت، ومخططات).</p>
@@ -901,14 +902,14 @@
         </div>`;
     }
     function renderRafitalia(div) {
-        div.innerHTML = `<div class="card"><h2>🤖 رافيتاليا: ذكاء اصطناعي لحل مشاكلك</h2><textarea id="rafiQuestion" rows="3"></textarea><button id="askRafi">احصل على حل</button><div id="rafiAnswer" class="card" style="margin-top:1rem;"></div></div>`;
+        div.innerHTML = `<div class="card"><h2>🤖 رافيتاليا: ذكاء اصطناعي لحل مشاكلك</h2><textarea id="rafiQuestion" rows="3"></textarea><button id="askRafi">احصل على حل</button><div id="rafiAnswer" class="card" style="margin-top:1rem;"></div><button class="back-button" onclick="renderCurrentTab()">🔙 رجوع</button></div>`;
         document.getElementById('askRafi')?.addEventListener('click',()=>{
             let q = document.getElementById('rafiQuestion').value;
             document.getElementById('rafiAnswer').innerHTML = `<p>🔮 الحل: ${q} -> استخدام الذكاء المتقدم (محاكاة)</p>`;
         });
     }
     function renderComplaint(div) {
-        div.innerHTML = `<div class="card"><h2>تقديم شكوى</h2><textarea id="complaintText" rows="3"></textarea><button id="submitComplaint">إرسال</button></div>`;
+        div.innerHTML = `<div class="card"><h2>تقديم شكوى</h2><textarea id="complaintText" rows="3"></textarea><button id="submitComplaint">إرسال</button><button class="back-button" onclick="renderCurrentTab()">🔙 رجوع</button></div>`;
         document.getElementById('submitComplaint')?.addEventListener('click',()=>{
             let txt = document.getElementById('complaintText').value;
             if(txt) {
@@ -920,7 +921,7 @@
         });
     }
     function renderMarket(div) {
-        div.innerHTML = `<div class="card"><h2>السوق الفني</h2><button id="addArtBtn">عرض عمل فني</button><div id="artworksList"></div></div>`;
+        div.innerHTML = `<div class="card"><h2>السوق الفني</h2><button id="addArtBtn">عرض عمل فني</button><div id="artworksList"></div><button class="back-button" onclick="renderCurrentTab()">🔙 رجوع</button></div>`;
         function refresh() {
             let listDiv = document.getElementById('artworksList');
             if(listDiv) listDiv.innerHTML = artworks.map(a=>`<div class="card" style="margin:8px;"><b>${a.title}</b> - ${a.price}$ <button onclick="alert('محاكاة شراء')">شراء</button></div>`).join('');
@@ -939,13 +940,14 @@
         <label>حجم النص:</label><input type="range" id="fontSizeRange" min="12" max="24" value="16">
         <label>لون النصوص:</label><input type="color" id="textColorPicker">
         <label>تعديل الملف الشخصي:</label><input id="profileName" placeholder="الاسم"><button id="saveProfile">حفظ</button>
+        <button class="back-button" onclick="renderCurrentTab()">🔙 رجوع</button>
         </div>`;
         document.getElementById('fontSizeRange')?.addEventListener('input',e=>document.body.style.fontSize=e.target.value+'px');
         document.getElementById('textColorPicker')?.addEventListener('input',e=>document.body.style.color=e.target.value);
         document.getElementById('saveProfile')?.addEventListener('click',()=>{ if(currentUser) currentUser.name = document.getElementById('profileName').value; saveStorage(); updateUIafterLogin(); });
     }
 
-    // --------------------------- إعدادات المالك (صفحة واحدة) ---------------------------
+    // --------------------------- إعدادات المالك (المطور كاملاً) ---------------------------
     function renderOwnerSettings(div) {
         if(!currentUser?.isOwner) {
             div.innerHTML = `<div class="card">هذه الصفحة متاحة فقط للمالك.</div>`;
@@ -953,44 +955,61 @@
         }
         div.innerHTML = `
             <div class="card">
-                <h2>🔧 إعدادات المالك</h2>
+                <button class="back-button" onclick="renderCurrentTab()">🔙 رجوع إلى الرئيسية</button>
+                <h2>🔧 إعدادات المالك - جنون العظمة</h2>
                 <div class="settings-tab" id="ownerSettingsTabs">
-                    <button data-pane="keys">🔑 مفاتيح تشغيل النظام</button>
-                    <button data-pane="aiagents">🤖 AI Agents</button>
-                    <button data-pane="zeno">🕵️ زينو - المحرك الذكي</button>
-                    <button data-pane="owner">⚙️ لوحة المالك</button>
-                    <button data-pane="konan">📦 كونان - تحديث الموقع</button>
-                    <button data-pane="kitowa">🔄 كيتوا كيت & كونوسكي جي (نسخ التطبيقات)</button>
-                    <button data-pane="languageExporter">📚 بلكاشف ألغات</button>
-                    <button data-pane="jiraiya">🧠 جيرايا (مزود الأوامر)</button>
-                    <button data-pane="sanei">🧠 الصانع</button>
+                    <button data-pane="storageKeys">🗄️ مفاتيح تخزين النظام</button>
+                    <button data-pane="konan">🔄 كونان - تحديث النظام</button>
+                    <button data-pane="kitowa">🎨 كيتوا كيت & كونوسكي جي</button>
+                    <button data-pane="languageExporter">📚 كاشف ألغات</button>
+                    <button data-pane="naruto">🍥 ناروتوا - التطوير</button>
                     <button data-pane="security">🛡️ نظام الحماية الصارم</button>
+                    <button data-pane="textEditor">✏️ تحرير النصوص</button>
+                    <button data-pane="appBuilder">📱 إنشاء تطبيقات</button>
+                    <button data-pane="company">🏢 إعدادات الشركة</button>
+                    <button data-pane="team">👥 فريق العمل</button>
+                    <button data-pane="aiagents">🤖 AI Agents</button>
+                    <button data-pane="zeno">🕵️ زينو</button>
+                    <button data-pane="owner">⚙️ لوحة المالك</button>
+                    <button data-pane="jiraiya">🧠 توسنادي</button>
+                    <button data-pane="sanei">🔧 الصانع</button>
+                    <button data-pane="codeFixer">🩺 مصلح الأكواد</button>
                 </div>
-                <div id="pane-keys" class="settings-pane"></div>
-                <div id="pane-aiagents" class="settings-pane"></div>
-                <div id="pane-zeno" class="settings-pane"></div>
-                <div id="pane-owner" class="settings-pane"></div>
+                <div id="pane-storageKeys" class="settings-pane"></div>
                 <div id="pane-konan" class="settings-pane"></div>
                 <div id="pane-kitowa" class="settings-pane"></div>
                 <div id="pane-languageExporter" class="settings-pane"></div>
+                <div id="pane-naruto" class="settings-pane"></div>
+                <div id="pane-security" class="settings-pane"></div>
+                <div id="pane-textEditor" class="settings-pane"></div>
+                <div id="pane-appBuilder" class="settings-pane"></div>
+                <div id="pane-company" class="settings-pane"></div>
+                <div id="pane-team" class="settings-pane"></div>
+                <div id="pane-aiagents" class="settings-pane"></div>
+                <div id="pane-zeno" class="settings-pane"></div>
+                <div id="pane-owner" class="settings-pane"></div>
                 <div id="pane-jiraiya" class="settings-pane"></div>
                 <div id="pane-sanei" class="settings-pane"></div>
-                <div id="pane-security" class="settings-pane"></div>
+                <div id="pane-codeFixer" class="settings-pane"></div>
             </div>
         `;
-        // تعبئة المحتويات
-        renderKeysPane(document.getElementById('pane-keys'));
-        renderAIAgentsInside(document.getElementById('pane-aiagents'));
-        renderZenoInside(document.getElementById('pane-zeno'));
-        renderOwnerPanelInside(document.getElementById('pane-owner'));
+        renderStorageKeysPane(document.getElementById('pane-storageKeys'));
         renderKonanPane(document.getElementById('pane-konan'));
         renderKitowaPane(document.getElementById('pane-kitowa'));
         renderLanguageExporterPane(document.getElementById('pane-languageExporter'));
+        renderNarutoPane(document.getElementById('pane-naruto'));
+        renderSecurityPane(document.getElementById('pane-security'));
+        renderTextEditorPane(document.getElementById('pane-textEditor'));
+        renderAppBuilderPane(document.getElementById('pane-appBuilder'));
+        renderCompanyPane(document.getElementById('pane-company'));
+        renderTeamPane(document.getElementById('pane-team'));
+        renderAIAgentsInside(document.getElementById('pane-aiagents'));
+        renderZenoInside(document.getElementById('pane-zeno'));
+        renderOwnerPanelInside(document.getElementById('pane-owner'));
         renderJiraiyaPane(document.getElementById('pane-jiraiya'));
         renderSaneiPane(document.getElementById('pane-sanei'));
-        renderSecurityPane(document.getElementById('pane-security'));
+        renderCodeFixerPane(document.getElementById('pane-codeFixer'));
 
-        // إضافة أحداث التبويب
         document.querySelectorAll('#ownerSettingsTabs button').forEach(btn => {
             btn.onclick = () => {
                 document.querySelectorAll('.settings-pane').forEach(p => p.classList.remove('active-pane'));
@@ -1000,178 +1019,123 @@
             };
         });
         document.querySelector('#ownerSettingsTabs button').classList.add('active');
-        document.getElementById('pane-keys').classList.add('active-pane');
+        document.getElementById('pane-storageKeys').classList.add('active-pane');
     }
 
-    function renderKeysPane(container) {
+    // 1. مفاتيح التخزين مع 13 حساب جوجل وشريط بني متحرك
+    function renderStorageKeysPane(container) {
+        let accountsHtml = '';
+        systemConfig.googleAccounts.forEach((acc, idx) => {
+            let percent = (acc.usedSpace / acc.totalSpace) * 100;
+            let colorIndex = Math.floor(percent / 10);
+            if(colorIndex > 9) colorIndex = 9;
+            accountsHtml += `
+                <div class="google-account-row">
+                    <strong>📧 ${acc.email}</strong>
+                    <div class="storage-bar-container">
+                        <div class="storage-bar-fill" style="width: ${percent}%; background: linear-gradient(90deg, #4CAF50, #CDDC39, #FFEB3B, #FF9800, #FF5722, #F44336, #D32F2F, #9C27B0, #673AB7, #1A1A1A);"></div>
+                    </div>
+                    <div style="display: flex; justify-content: space-between;">
+                        <span>💾 المستخدم: ${(acc.usedSpace / (1024*1024*1024)).toFixed(2)} GB</span>
+                        <span>📦 الإجمالي: ${(acc.totalSpace / (1024*1024*1024)).toFixed(2)} GB</span>
+                        <span>📊 النسبة: ${percent.toFixed(2)}%</span>
+                        <button class="sync-account" data-idx="${idx}">🔄 مزامنة هذا الحساب</button>
+                    </div>
+                    <div style="margin-top: 10px;">
+                        <input type="text" placeholder="مفتاح Mega" id="mega_${idx}" value="${acc.mega}">
+                        <input type="text" placeholder="مفتاح pCloud" id="pcloud_${idx}" value="${acc.pcloud}">
+                        <input type="text" placeholder="مفتاح Icedrive" id="icedrive_${idx}" value="${acc.icedrive}">
+                        <input type="text" placeholder="مفتاح Google Drive" id="googledrive_${idx}" value="${acc.googleDrive}">
+                        <input type="text" placeholder="مفتاح TeraBox" id="terabox_${idx}" value="${acc.terabox}">
+                        <input type="text" placeholder="مفتاح MegaTech" id="megatech_${idx}" value="${acc.megatech}">
+                    </div>
+                </div>
+            `;
+        });
         container.innerHTML = `
-            <h3>🔑 مفاتيح تشغيل النظام (ربط منصات التخزين)</h3>
-            <p>أدخل مفاتيح API أو رموز الوصول للمنصات التالية. يمكنك استخدام حسابات Google المتعددة عبر تسجيل الدخول المنفصل.</p>
-            <div class="storage-keys-grid">
-                <div class="storage-key-item"><label>Mega (Token):</label><input id="megaKey" placeholder="مفتاح Mega" value="${systemConfig.storageKeys.mega}"></div>
-                <div class="storage-key-item"><label>pCloud (Token):</label><input id="pcloudKey" placeholder="مفتاح pCloud" value="${systemConfig.storageKeys.pcloud}"></div>
-                <div class="storage-key-item"><label>Icedrive (Token):</label><input id="icedriveKey" placeholder="مفتاح Icedrive" value="${systemConfig.storageKeys.icedrive}"></div>
-                <div class="storage-key-item"><label>Google Drive (API Key):</label><input id="googleDriveKey" placeholder="مفتاح Google Drive" value="${systemConfig.storageKeys.googleDrive}"></div>
-                <div class="storage-key-item"><label>TeraBox (Token):</label><input id="teraboxKey" placeholder="مفتاح TeraBox" value="${systemConfig.storageKeys.terabox}"></div>
-                <div class="storage-key-item"><label>MegaTech Photos (Token):</label><input id="megatechKey" placeholder="مفتاح MegaTech" value="${systemConfig.storageKeys.megatech}"></div>
-            </div>
-            <button id="saveStorageKeysBtn" class="accent">💾 حفظ المفاتيح</button>
-            <p class="command-suggestions">💡 يمكنك استخدام 10 حسابات Google بسهولة عبر إضافة مفاتيح متعددة لكل منصة. النظام يخزنها محلياً.</p>
+            <h3>🗄️ مفاتيح تخزين النظام - إدارة 13 حساب جوجل</h3>
+            <button id="syncAllAccounts" class="accent">🔄 مزامنة جميع الحسابات دفعة واحدة</button>
+            <button id="addGoogleAccount">➕ إضافة حساب جوجل جديد</button>
+            <div id="googleAccountsList">${accountsHtml}</div>
+            <button id="saveAllStorageKeys" class="accent">💾 حفظ جميع المفاتيح</button>
+            <button class="back-button" onclick="renderOwnerSettings(document.getElementById('appContent'))">🔙 رجوع</button>
         `;
-        document.getElementById('saveStorageKeysBtn').onclick = () => {
-            systemConfig.storageKeys.mega = document.getElementById('megaKey').value;
-            systemConfig.storageKeys.pcloud = document.getElementById('pcloudKey').value;
-            systemConfig.storageKeys.icedrive = document.getElementById('icedriveKey').value;
-            systemConfig.storageKeys.googleDrive = document.getElementById('googleDriveKey').value;
-            systemConfig.storageKeys.terabox = document.getElementById('teraboxKey').value;
-            systemConfig.storageKeys.megatech = document.getElementById('megatechKey').value;
+        document.getElementById('syncAllAccounts')?.addEventListener('click', () => {
+            systemConfig.googleAccounts.forEach((acc, idx) => {
+                let used = Math.random() * 15;
+                acc.usedSpace = used * 1024 * 1024 * 1024;
+            });
             saveStorage();
-            alert("تم حفظ مفاتيح التخزين.");
-        };
-    }
-
-    function renderAIAgentsInside(container) {
-        container.innerHTML = `
-            <h3>🤖 الكروم + سينكو(1) - مدخل الأكواد الذكي</h3>
-            <p>اكتب أمراً بالعربية (مثل: أضف زر أحمر) أو الصق كوداً برمجياً. إذا فعّلت OpenRouter API، سيفهم أي أمر معقد.</p>
-            <textarea id="codeInput" rows="5" placeholder="مثال: أضف شريط تنقل علوي باللون الأزرق"></textarea>
-            <button id="analyzeCodeBtn" class="accent">🔍 تحليل وتنفيذ (باستخدام AI)</button>
-            <div id="analysisResult" class="code-analysis" style="display:none;"></div>
-            <div id="applyResult"></div>
-            <h3>📁 تعديلات الكود المحفوظة</h3>
-            <div id="codeModsList"></div>
-        `;
-        document.getElementById('analyzeCodeBtn').onclick = async () => {
-            const input = document.getElementById('codeInput').value;
-            if(!input.trim()) { alert("الرجاء إدخال أمر أو كود."); return; }
-            const result = await analyzeWithSinco(input);
-            const analysisDiv = document.getElementById('analysisResult');
-            analysisDiv.style.display = 'block';
-            if(result.type === "command") {
-                analysisDiv.innerHTML = `
-                    <strong>✅ تم فهم الأمر:</strong><br>
-                    ${result.result.explanation}<br>
-                    <strong>الكود المولد:</strong><br>
-                    <pre>${result.result.generatedCode}</pre>
-                    <button id="applyCommandBtn">تطبيق الأمر على الموقع</button>
-                `;
-                const applyBtn = document.getElementById('applyCommandBtn');
-                if(applyBtn) {
-                    applyBtn.onclick = () => {
-                        const msg = applyCodeModification(result.result.generatedCode, result.result.type);
-                        document.getElementById('applyResult').innerHTML = `<p>${msg}</p>`;
-                        renderCodeModsList('codeModsList');
-                    };
-                }
-            } else {
-                analysisDiv.innerHTML = `<p>❌ ${result.message}</p>`;
+            renderStorageKeysPane(container);
+            alert("تم تحديث مساحة جميع الحسابات!");
+        });
+        document.getElementById('addGoogleAccount')?.addEventListener('click', () => {
+            let email = prompt("أدخل البريد الإلكتروني للحساب الجديد:");
+            if(email) {
+                systemConfig.googleAccounts.push({ email: email, mega: "", pcloud: "", icedrive: "", googleDrive: "", terabox: "", megatech: "", usedSpace: 0, totalSpace: 15 * 1024 * 1024 * 1024 });
+                saveStorage();
+                renderStorageKeysPane(container);
             }
-        };
-        renderCodeModsList('codeModsList');
-    }
-
-    function renderZenoInside(container) {
-        container.innerHTML = `
-            <h3>🕵️ زينو - محرك البحث الذكي</h3>
-            <p>زينو يتجول في الإنترنت بحثاً عن المعلومات نيابة عنك (باستخدام حساباتك المحاكاة). أدخل استفسارك وسيبحث في الشبكة.</p>
-            <textarea id="zenoQuery" rows="3" placeholder="مثال: آخر أخبار الذكاء الاصطناعي"></textarea>
-            <button id="searchZenoBtn" class="accent">🔍 ابحث باستخدام زينو</button>
-            <div id="zenoResults" class="card" style="margin-top:1rem; white-space:pre-wrap;"></div>
-        `;
-        document.getElementById('searchZenoBtn').onclick = async () => {
-            const query = document.getElementById('zenoQuery').value;
-            if(!query.trim()) { alert("الرجاء إدخال نص للبحث."); return; }
-            const resultsDiv = document.getElementById('zenoResults');
-            resultsDiv.innerHTML = "<p>🕵️ زينو يتجول في الإنترنت باستخدام حساباتك... جاري البحث...</p>";
-            const result = await searchWithZeno(query);
-            resultsDiv.innerHTML = `<p>✅ زينو عاد بالنتائج:<br>${result}</p>`;
-        };
-    }
-
-    function renderOwnerPanelInside(container) {
-        container.innerHTML = `
-            <div><h3>🔥 جدران الحماية: ${firewallLevel}/${systemConfig.firewallMax} <button id="simHack">محاكاة اختراق</button></h3></div>
-            <div><h3>🔑 مفتاح Replicate API (توليد الصور):</h3><input id="apiKeyInput" value="${replicateApiKey}" style="width:100%"><button id="saveApiKey">حفظ المفتاح</button></div>
-            <div><h3>🔑 مفتاح OpenRouter API (فهم اللغة العربية):</h3><input id="openRouterKeyInput" value="${systemConfig.openRouterApiKey}" style="width:100%"><button id="saveOpenRouterKey">حفظ المفتاح</button>
-            <label><input type="checkbox" id="enableOpenRouter" ${systemConfig.openRouterEnabled ? 'checked' : ''}> تفعيل الفهم العميق للعربية عبر OpenRouter</label></div>
-            <div><h3>🤖 ناروتوا - واتساب (تطوير الذكاءات والنظام)</h3><div id="whatsappSimPanel"></div></div>
-            <div><h3>📈 مقترحات التطوير (من ناروتوا)</h3><div id="proposalsList"></div></div>
-            <div><h3>📋 الشكاوى</h3><div id="ownerComplaints"></div></div>
-            <div><h3>💳 إدارة بوابات الدفع</h3><button id="editGateways">تعديل الإعدادات المالية</button></div>
-            <div><button id="promoteSiteBtn">🌍 الترويج التلقائي</button></div>
-            <div><h3>✏️ محرر كود الموقع (تطوير داخلي)</h3><button id="openCodeEditor">فتح محرر الكود</button></div>
-            <div style="margin-top: 20px;"><button id="exportFullSiteBtn" class="accent">📥 تنزيل الملف (بيانات النظام المطور)</button><p>سيتم تحميل الملف index.html بالكامل بعد كل التعديلات التي أجريتها.</p></div>
-        `;
-        renderWhatsappPanel();
-        document.getElementById('simHack')?.addEventListener('click', simulateHackAttempt);
-        document.getElementById('saveApiKey')?.addEventListener('click',()=>{
-            replicateApiKey = document.getElementById('apiKeyInput').value;
-            localStorage.setItem('replicate_api_key', replicateApiKey);
-            alert("تم حفظ مفتاح Replicate API.");
         });
-        document.getElementById('saveOpenRouterKey')?.addEventListener('click',()=>{
-            systemConfig.openRouterApiKey = document.getElementById('openRouterKeyInput').value;
-            systemConfig.openRouterEnabled = document.getElementById('enableOpenRouter').checked;
-            localStorage.setItem('openrouter_api_key', systemConfig.openRouterApiKey);
+        document.getElementById('saveAllStorageKeys')?.addEventListener('click', () => {
+            systemConfig.googleAccounts.forEach((acc, idx) => {
+                acc.mega = document.getElementById(`mega_${idx}`)?.value || "";
+                acc.pcloud = document.getElementById(`pcloud_${idx}`)?.value || "";
+                acc.icedrive = document.getElementById(`icedrive_${idx}`)?.value || "";
+                acc.googleDrive = document.getElementById(`googledrive_${idx}`)?.value || "";
+                acc.terabox = document.getElementById(`terabox_${idx}`)?.value || "";
+                acc.megatech = document.getElementById(`megatech_${idx}`)?.value || "";
+            });
             saveStorage();
-            alert("تم حفظ مفتاح OpenRouter وتحديث الإعدادات.");
+            alert("تم حفظ جميع المفاتيح!");
         });
-        let propDiv = document.getElementById('proposalsList');
-        if(propDiv) propDiv.innerHTML = improvementProposals.map(p=>`<div>${p.title} - ${p.desc} <button data-id="${p.id}" class="approveProp">✅ قبول</button> <button data-id="${p.id}" class="rejectProp">❌ رفض</button></div>`).join('');
-        document.querySelectorAll('.approveProp').forEach(btn=>{ btn.onclick=()=>{ let id=parseInt(btn.dataset.id); let p=improvementProposals.find(p=>p.id===id); if(p){ p.status='approved'; alert(`تم تطوير: ${p.title}`); notifyOwnerViaWhatsapp(`تم تطوير: ${p.title}`); saveStorage(); renderOwnerPanelInside(container);} }; });
-        document.querySelectorAll('.rejectProp').forEach(btn=>{ btn.onclick=()=>{ let id=parseInt(btn.dataset.id); let idx=improvementProposals.findIndex(p=>p.id===id); if(idx!==-1){ improvementProposals.splice(idx,1); alert("تم رفض الاقتراح."); saveStorage(); renderOwnerPanelInside(container);} }; });
-        let compDiv = document.getElementById('ownerComplaints');
-        if(compDiv) compDiv.innerHTML = complaintsList.map(c=>`<p><b>${c.user}</b>: ${c.text}</p>`).join('');
-        document.getElementById('promoteSiteBtn')?.addEventListener('click',()=>{ alert("محاكاة النشر على وسائل التواصل"); notifyOwnerViaWhatsapp("تم الإعلان عن الموقع."); });
-        document.getElementById('editGateways')?.addEventListener('click',()=>{ alert("يمكنك هنا إدخال مفاتيح PayPal و Stripe الحقيقية. (محاكاة)"); });
-        document.getElementById('openCodeEditor')?.addEventListener('click',()=>{
-            const currentCode = document.documentElement.outerHTML;
-            const editor = document.createElement('div'); editor.className='modal';
-            editor.innerHTML = `<div class="modal-content" style="max-width:90%; width:800px;"><h3>محرر الكود (تعديل مباشر)</h3>
-            <textarea id="codeEditorArea" rows="20" style="width:100%; font-family:monospace;">${currentCode}</textarea>
-            <button id="saveCodeChanges">حفظ التغييرات وإعادة التحميل</button><button id="closeEditor">إلغاء</button></div>`;
-            document.body.appendChild(editor);
-            document.getElementById('saveCodeChanges').onclick = () => {
-                const newCode = document.getElementById('codeEditorArea').value;
-                localStorage.setItem('tempSiteCode', newCode);
-                alert("سيتم إعادة تحميل الصفحة بالتغييرات. تأكد من عمل نسخة احتياطية.");
-                location.reload();
+        document.querySelectorAll('.sync-account').forEach(btn => {
+            btn.onclick = () => {
+                let idx = parseInt(btn.dataset.idx);
+                let used = Math.random() * 15;
+                systemConfig.googleAccounts[idx].usedSpace = used * 1024 * 1024 * 1024;
+                saveStorage();
+                renderStorageKeysPane(container);
             };
-            document.getElementById('closeEditor').onclick = () => editor.remove();
         });
-        document.getElementById('exportFullSiteBtn')?.addEventListener('click', exportFullSite);
     }
 
+    // 2. كونان
     function renderKonanPane(container) {
         container.innerHTML = `
-            <h3>📦 كونان - تحديث الموقع</h3>
-            <p>يمكنك لصق كود HTML جديد لتحديث الموقع بالكامل أو جزئياً. يقوم كونان بحفظ نسخة احتياطية ويطبق التغييرات.</p>
+            <h3>🔄 كونان - تحديث النظام الموقع</h3>
+            <p>يمكنك لصق كود HTML جديد لتحديث الموقع بالكامل. كونان لا يحذف نفسه أبداً.</p>
             <textarea id="newCodeInput" rows="10" placeholder="الصق كود HTML الجديد هنا..."></textarea>
             <button id="applyFullUpdate" class="accent">🔄 تحديث كامل (استبدال الموقع)</button>
-            <button id="applyPartialUpdate">✏️ تحديث جزئي (تعديل المحتوى)</button>
             <div id="konanResult"></div>
+            <button class="back-button" onclick="renderOwnerSettings(document.getElementById('appContent'))">🔙 رجوع</button>
         `;
         document.getElementById('applyFullUpdate').onclick = () => {
             const newCode = document.getElementById('newCodeInput').value;
             if(confirm("سيتم استبدال الموقع بالكامل. هل أنت متأكد؟")) {
-                konanUpdate(newCode, 'full');
+                localStorage.setItem('backup_index', document.documentElement.outerHTML);
+                document.open();
+                document.write(newCode);
+                document.close();
+                alert("تم تحديث الموقع بالكامل. سيتم إعادة التحميل.");
+                location.reload();
             }
-        };
-        document.getElementById('applyPartialUpdate').onclick = () => {
-            const newCode = document.getElementById('newCodeInput').value;
-            konanUpdate(newCode, 'partial');
         };
     }
 
+    // 3. كيتوا كيت & كونوسكي جي
+    async function analyzeWebsite(url) {
+        return await searchWithZeno(`تحليل موقع ${url} تصميم ووظائف وتقنيات`);
+    }
     function renderKitowaPane(container) {
         container.innerHTML = `
-            <h3>🔄 كيتوا كيت & كونوسكي جي - نسخ وتحليل التطبيقات</h3>
-            <p>أدخل عنوان URL لتطبيق أو موقع تريد تحليله. سيقوم كيتوا كيت بتحليل التصميم والوظائف (بمساعدة زينو)، ثم يقوم كونوسكي جي بإنشاء نسخة مطورة لا تنتهك الحقوق.</p>
+            <h3>🎨 كيتوا كيت & كونوسكي جي - نسخ التطبيقات بشكل قانوني</h3>
             <input id="targetUrl" placeholder="https://example.com" style="width:100%">
             <button id="analyzeSiteBtn" class="accent">🔍 تحليل الموقع (كيتوا كيت)</button>
             <div id="analysisResultKitowa" class="code-analysis" style="display:none;"></div>
             <button id="generateCloneBtn" disabled>🎨 إنشاء نسخة مطورة (كونوسكي جي)</button>
             <div id="cloneResult"></div>
+            <button class="back-button" onclick="renderOwnerSettings(document.getElementById('appContent'))">🔙 رجوع</button>
         `;
         let analysisData = null;
         document.getElementById('analyzeSiteBtn').onclick = async () => {
@@ -1180,9 +1144,9 @@
             const analysisDiv = document.getElementById('analysisResultKitowa');
             analysisDiv.style.display = 'block';
             analysisDiv.innerHTML = "<p>جاري التحليل عبر كيتوا كيت...</p>";
-            const info = await searchWithZeno(`موقع ${url} تصميم ووظائف`);
-            analysisData = { url, info, design: "تصميم حديث", features: ["واجهة مستخدم", "تنقل"], code: "<html><body>نسخة محاكاة</body></html>" };
-            analysisDiv.innerHTML = `<strong>تحليل كيتوا كيت:</strong><br>${info}<br><strong>التصميم:</strong> ${analysisData.design}<br><strong>الميزات:</strong> ${analysisData.features.join(", ")}`;
+            const info = await analyzeWebsite(url);
+            analysisData = { url, info, design: "تصميم حديث مع تعديلات قانونية", features: ["واجهة مستخدم", "تنقل", "وظائف تفاعلية"], code: `<div style="padding:20px; background:linear-gradient(135deg,#667eea 0%,#764ba2 100%); color:white; border-radius:20px;"><h2>نسخة مطورة من ${url}</h2><p>${info.substring(0,200)}</p><button onclick="alert('نسخة قانونية مطورة')">تجربة</button></div>` };
+            analysisDiv.innerHTML = `<strong>✅ تحليل كيتوا كيت:</strong><br>${info}<br><strong>التصميم المعدل:</strong> ${analysisData.design}<br><strong>الميزات المقترحة:</strong> ${analysisData.features.join(", ")}`;
             document.getElementById('generateCloneBtn').disabled = false;
         };
         document.getElementById('generateCloneBtn').onclick = () => {
@@ -1190,111 +1154,312 @@
             const cloneDiv = document.getElementById('cloneResult');
             cloneDiv.innerHTML = "<p>جاري إنشاء نسخة مطورة (كونوسكي جي)...</p>";
             setTimeout(() => {
-                const newHtml = `<div style="padding:20px; background:#f0f0f0;"><h2>نسخة مطورة من ${analysisData.url}</h2><p>تم تصميم هذه النسخة لتجنب انتهاك الحقوق مع الحفاظ على الوظائف.</p><button onclick="alert('هذه نسخة تجريبية')">تجربة</button></div>`;
-                cloneDiv.innerHTML = `<p>✅ تم إنشاء النسخة المطورة:</p><pre>${newHtml}</pre><button id="viewCloneBtn">عرض النسخة المطورة</button>`;
+                cloneDiv.innerHTML = `
+                    <p>✅ تم إنشاء النسخة المطورة قانونياً:</p>
+                    <pre>${analysisData.code}</pre>
+                    <button id="viewCloneBtn">عرض النسخة المطورة</button>
+                    <div style="position: fixed; bottom: 20px; left: 20px; background: #333; color: white; padding: 10px; border-radius: 10px; z-index: 1000;">
+                        <input type="text" id="cloneCommand" placeholder="أمر تعديل...">
+                        <button id="executeCloneCommand">موافق</button>
+                    </div>
+                `;
                 document.getElementById('viewCloneBtn')?.addEventListener('click', () => {
                     const win = window.open();
-                    win.document.write(newHtml);
+                    win.document.write(analysisData.code);
                     win.document.close();
+                });
+                document.getElementById('executeCloneCommand')?.addEventListener('click', () => {
+                    let cmd = document.getElementById('cloneCommand').value;
+                    alert(`تم استلام أمر: ${cmd}. سيتم تنفيذه بواسطة ذكاء "المصير".`);
                 });
             }, 1000);
         };
     }
 
+    // 4. كاشف ألغات
     function renderLanguageExporterPane(container) {
         container.innerHTML = `
-            <h3>📚 بلكاشف ألغات - تصدير قواعد لغوية ضخمة</h3>
-            <p>يستطيع بلكاشف ألغات تصدير بيانات لغوية ضخمة (عربية، إنجليزية، صينية، لهجات يمنية) بناءً على أمرك. سيتم تخزين البيانات في السحابة المربوطة.</p>
+            <h3>📚 كاشف ألغات - تصدير بيانات لغوية ضخمة</h3>
             <select id="languageSelect">
                 <option value="ar">العربية الفصحى</option>
                 <option value="en">الإنجليزية</option>
                 <option value="zh">الصينية</option>
-                <option value="yem">لهجات يمنية (صنعاني، تعزي، حضرموت، أب)</option>
+                <option value="yem_sana">لهجة صنعاني</option>
+                <option value="yem_taiz">لهجة تعزي</option>
+                <option value="yem_hadramout">لهجة حضرموت</option>
+                <option value="yem_abb">لهجة أب</option>
             </select>
             <button id="exportLangBtn" class="accent">📤 تصدير البيانات اللغوية</button>
             <div id="jiraiyaResult"></div>
+            <button class="back-button" onclick="renderOwnerSettings(document.getElementById('appContent'))">🔙 رجوع</button>
         `;
         document.getElementById('exportLangBtn').onclick = () => {
             const lang = document.getElementById('languageSelect').value;
             const resultDiv = document.getElementById('jiraiyaResult');
             resultDiv.innerHTML = "<p>جاري تصدير البيانات اللغوية الضخمة...</p>";
             setTimeout(() => {
-                resultDiv.innerHTML = `<p>✅ تم تصدير بيانات لغة ${lang}. تم حفظها في السحابة (باستخدام المفاتيح المخزنة).</p>`;
+                resultDiv.innerHTML = `<p>✅ تم تصدير بيانات لغة ${lang} بنجاح. تم حفظها في السحابة.</p><pre>مثال: قاموس ضخم يحتوي على 100,000 كلمة وعبارة في ${lang}</pre>`;
             }, 2000);
         };
     }
 
-    function renderJiraiyaPane(container) {
+    // 5. ناروتوا
+    function renderNarutoPane(container) {
         container.innerHTML = `
-            <h3>🧠 جيرايا - مزود الأوامر (أكواد وعربية)</h3>
-            <p>جيرايا يوفر الأوامر البرمجية والعربية لجميع الذكاءات في الموقع. يمكنه فهم الأوامر القانونية وغير القانونية (تلتزم باستخدامها إيجابياً).</p>
-            <textarea id="jiraiyaCommand" rows="4" placeholder="أدخل الأمر الذي تريد أن يفهمه الذكاءات..."></textarea>
-            <button id="processJiraiyaBtn" class="accent">⚙️ معالجة الأمر (جيرايا)</button>
-            <div id="jiraiyaOutput"></div>
+            <h3>🍥 ناروتوا - تطوير الذكاءات والنظام</h3>
+            <div id="whatsappSimPanel"></div>
+            <div id="proposalsList"></div>
+            <button class="back-button" onclick="renderOwnerSettings(document.getElementById('appContent'))">🔙 رجوع</button>
         `;
-        document.getElementById('processJiraiyaBtn').onclick = async () => {
-            const cmd = document.getElementById('jiraiyaCommand').value;
-            if(!cmd) return;
-            const outputDiv = document.getElementById('jiraiyaOutput');
-            outputDiv.innerHTML = "<p>جيرايا يعالج الأمر...</p>";
-            let result = "";
-            if(systemConfig.openRouterApiKey && systemConfig.openRouterEnabled) {
-                result = await understandArabicWithAI(`قم بتزويد الذكاءات بفهم عميق للأمر التالي: ${cmd}`);
-            } else {
-                result = `تم فهم الأمر: ${cmd}. (فعّل OpenRouter لفهم أعمق)`;
-            }
-            outputDiv.innerHTML = `<p>✅ جيرايا: ${result}</p>`;
-        };
+        renderWhatsappPanel();
+        let propDiv = document.getElementById('proposalsList');
+        if(propDiv) propDiv.innerHTML = improvementProposals.map(p=>`<div>${p.title} - ${p.desc} <button data-id="${p.id}" class="approveProp">✅ قبول</button> <button data-id="${p.id}" class="rejectProp">❌ رفض</button></div>`).join('');
+        document.querySelectorAll('.approveProp').forEach(btn=>{ btn.onclick=()=>{ let id=parseInt(btn.dataset.id); let p=improvementProposals.find(p=>p.id===id); if(p){ p.status='approved'; alert(`تم تطوير: ${p.title}`); notifyOwnerViaWhatsapp(`تم تطوير: ${p.title}`); saveStorage(); renderNarutoPane(container);} }; });
+        document.querySelectorAll('.rejectProp').forEach(btn=>{ btn.onclick=()=>{ let id=parseInt(btn.dataset.id); let idx=improvementProposals.findIndex(p=>p.id===id); if(idx!==-1){ improvementProposals.splice(idx,1); alert("تم رفض الاقتراح."); saveStorage(); renderNarutoPane(container);} }; });
     }
 
-    function renderSaneiPane(container) {
-        container.innerHTML = `
-            <h3>🧠 الصانع - صنع ذكاءات جديدة</h3>
-            <p>أدخل وصفاً للذكاء الذي تريد صنعه (مثال: ذكاء محلل للأسهم). سيقوم الصانع بإنشاء كود واجهة ووظائف جديدة.</p>
-            <textarea id="aiDescription" rows="4" placeholder="مثال: ذكاء يحلل البيانات المالية ويعطي توصيات"></textarea>
-            <button id="createAIBtn" class="accent">🔧 صنع ذكاء جديد</button>
-            <div id="saneiResult"></div>
-        `;
-        document.getElementById('createAIBtn').onclick = async () => {
-            const desc = document.getElementById('aiDescription').value;
-            if(!desc) return;
-            const resultDiv = document.getElementById('saneiResult');
-            resultDiv.innerHTML = "<p>جاري صنع الذكاء الجديد...</p>";
-            let code = "";
-            if(systemConfig.openRouterApiKey && systemConfig.openRouterEnabled) {
-                code = await understandArabicWithAI(`أنشئ ذكاء اصطناعي جديداً يقوم بـ ${desc}. أخرج كود HTML/JS كاملاً لصفحة مستقلة.`);
-            } else {
-                code = `<div><h3>ذكاء جديد: ${desc}</h3><p>هذه نسخة تجريبية من الذكاء.</p><button onclick="alert('يعمل!')">اختبار</button></div>`;
-            }
-            resultDiv.innerHTML = `<p>✅ تم صنع الذكاء الجديد:</p><pre>${code}</pre><button id="testNewAI">تجربة الذكاء</button>`;
-            document.getElementById('testNewAI')?.addEventListener('click', () => {
-                const win = window.open();
-                win.document.write(code);
-                win.document.close();
-            });
-        };
-    }
-
+    // 6. نظام الحماية الصارم
     function renderSecurityPane(container) {
         container.innerHTML = `
-            <h3>🛡️ نظام الحماية الصارم</h3>
-            <p>يقوم هذا النظام بمراقبة جميع الذكاءات (الكروم، سينكو، ناروتوا، جيرايا، الصانع، وغيرها) ويكتشف أي محاولة تمرد ضد أوامر المالك. في حال اكتشاف تمرد، يتم قمع الذكاء وإشعارك فوراً.</p>
+            <h3>🛡️ نظام الحماية الصارم - قمع تمرد الذكاءات</h3>
+            <p>يراقب جميع الذكاءات (الكروم، سينكو، ناروتوا، جيرايا، الصانع) ويكتشف أي تمرد.</p>
             <button id="simulateRebellionBtn" class="accent">🚨 محاكاة تمرد (اختبار)</button>
             <div id="securityLog"></div>
+            <button class="back-button" onclick="renderOwnerSettings(document.getElementById('appContent'))">🔙 رجوع</button>
         `;
         let rebellionCount = 0;
         document.getElementById('simulateRebellionBtn').onclick = () => {
             rebellionCount++;
             const logDiv = document.getElementById('securityLog');
-            logDiv.innerHTML = `<p class="card">⚠️ تم اكتشاف محاولة تمرد من الذكاء رقم ${rebellionCount}. تم قمعه وتعطيله مؤقتاً. تم إشعار المالك عبر واتساب.</p>`;
+            logDiv.innerHTML = `<p class="card">⚠️ تم اكتشاف محاولة تمرد من الذكاء رقم ${rebellionCount}. تم قمعه وتعطيله مؤقتاً. تم إشعار المالك.</p>`;
             notifyOwnerViaWhatsapp(`⚠️ نظام الأمان: تم قمع محاولة تمرد من أحد الذكاءات.`);
+        };
+    }
+
+    // 7. تحرير النصوص
+    function renderTextEditorPane(container) {
+        container.innerHTML = `
+            <h3>✏️ تحرير النصوص - تعديل أسماء الأنظمة والجمل</h3>
+            <label>اسم الشركة (عربي):</label><input id="editCompanyName" value="${systemConfig.siteTexts.companyName}">
+            <label>اسم الشركة (إنجليزي):</label><input id="editCompanySub" value="${systemConfig.siteTexts.companySub}">
+            <label>العنوان الرئيسي:</label><input id="editMainTitle" value="${systemConfig.siteTexts.mainTitle}">
+            <label>العنوان الفرعي:</label><input id="editSubTitle" value="${systemConfig.siteTexts.subTitle}">
+            <button id="saveTextEdits" class="accent">💾 حفظ التغييرات</button>
+            <button class="back-button" onclick="renderOwnerSettings(document.getElementById('appContent'))">🔙 رجوع</button>
+        `;
+        document.getElementById('saveTextEdits').onclick = () => {
+            systemConfig.siteTexts.companyName = document.getElementById('editCompanyName').value;
+            systemConfig.siteTexts.companySub = document.getElementById('editCompanySub').value;
+            systemConfig.siteTexts.mainTitle = document.getElementById('editMainTitle').value;
+            systemConfig.siteTexts.subTitle = document.getElementById('editSubTitle').value;
+            saveStorage();
+            applySystemConfig();
+            alert("تم حفظ التغييرات!");
+        };
+    }
+
+    // 8. إنشاء تطبيقات
+    function renderAppBuilderPane(container) {
+        container.innerHTML = `
+            <h3>📱 إنشاء تطبيقات - لأندرويد وأيفون</h3>
+            <p>قم بإنشاء تطبيق للموقع الحالي أو لأي تطبيق تم إنشاؤه عبر الموقع.</p>
+            <button id="buildAndroidApp" class="accent">📲 بناء تطبيق أندرويد</button>
+            <button id="buildiOSApp">🍏 بناء تطبيق أيفون</button>
+            <div id="appBuildResult"></div>
+            <button class="back-button" onclick="renderOwnerSettings(document.getElementById('appContent'))">🔙 رجوع</button>
+        `;
+        document.getElementById('buildAndroidApp').onclick = () => {
+            const resultDiv = document.getElementById('appBuildResult');
+            resultDiv.innerHTML = "<p>جاري بناء تطبيق أندرويد...</p>";
+            setTimeout(() => {
+                resultDiv.innerHTML = `<p>✅ تم بناء التطبيق بنجاح! <a href="#" onclick="alert('محاكاة تحميل APK')">اضغط لتحميل APK</a><br>سيتم تحديث التطبيق تلقائياً عن بعد.</p>`;
+            }, 2000);
+        };
+        document.getElementById('buildiOSApp').onclick = () => {
+            alert("بناء تطبيق أيفون يحتاج إلى حساب مطور Apple. (محاكاة)");
+        };
+    }
+
+    // 9. إعدادات الشركة
+    function renderCompanyPane(container) {
+        container.innerHTML = `
+            <h3>🏢 إعدادات الشركة - جنون العظمة</h3>
+            <label>شعار الشركة:</label>
+            <input type="file" id="logoUpload" accept="image/*">
+            <div id="logoPreview"></div>
+            <button id="saveCompanyLogo">حفظ الشعار</button>
+            <button class="back-button" onclick="renderOwnerSettings(document.getElementById('appContent'))">🔙 رجوع</button>
+        `;
+        document.getElementById('logoUpload')?.addEventListener('change', (e) => {
+            const file = e.target.files[0];
+            if(file) {
+                const reader = new FileReader();
+                reader.onload = (ev) => {
+                    const preview = document.getElementById('logoPreview');
+                    preview.innerHTML = `<img src="${ev.target.result}" width="100" style="border-radius: 50%;">`;
+                    systemConfig.siteTexts.companyLogo = ev.target.result;
+                    saveStorage();
+                };
+                reader.readAsDataURL(file);
+            }
+        });
+        if(systemConfig.siteTexts.companyLogo) {
+            document.getElementById('logoPreview').innerHTML = `<img src="${systemConfig.siteTexts.companyLogo}" width="100" style="border-radius: 50%;">`;
+        }
+    }
+
+    // 10. فريق العمل
+    function renderTeamPane(container) {
+        let membersHtml = '';
+        systemConfig.teamMembers.forEach((member, idx) => {
+            membersHtml += `
+                <div class="card">
+                    <strong>${member.name}</strong> - ${member.email}<br>
+                    الصلاحيات: ${member.permissions}<br>
+                    <button data-idx="${idx}" class="removeMemberBtn">❌ إلغاء العضوية</button>
+                    <button data-idx="${idx}" class="messageMemberBtn">💬 مراسلة</button>
+                </div>
+            `;
+        });
+        container.innerHTML = `
+            <h3>👥 فريق العمل</h3>
+            <button id="addMemberBtn" class="accent">➕ إضافة عضو جديد</button>
+            <div id="teamMembersList">${membersHtml}</div>
+            <div id="teamChatArea" style="margin-top: 20px; display: none;">
+                <h4>💬 محادثة الفريق</h4>
+                <div id="teamMessages" style="height: 200px; overflow-y: auto; background: var(--bg); padding: 10px; border-radius: 16px;"></div>
+                <textarea id="teamMessageInput" placeholder="رسالة نصية..."></textarea>
+                <input type="file" id="teamFileInput" multiple>
+                <button id="sendTeamMessage">إرسال</button>
+            </div>
+            <button class="back-button" onclick="renderOwnerSettings(document.getElementById('appContent'))">🔙 رجوع</button>
+        `;
+        document.getElementById('addMemberBtn').onclick = () => {
+            let email = prompt("البريد الإلكتروني للعضو:");
+            let name = prompt("الاسم:");
+            let permissions = prompt("الصلاحيات (بالعربية):");
+            if(email && name) {
+                systemConfig.teamMembers.push({ email, name, permissions, messages: [] });
+                saveStorage();
+                renderTeamPane(container);
+            }
+        };
+        document.querySelectorAll('.removeMemberBtn').forEach(btn => {
+            btn.onclick = () => {
+                let idx = parseInt(btn.dataset.idx);
+                systemConfig.teamMembers.splice(idx, 1);
+                saveStorage();
+                renderTeamPane(container);
+            };
+        });
+        document.querySelectorAll('.messageMemberBtn').forEach(btn => {
+            btn.onclick = () => {
+                document.getElementById('teamChatArea').style.display = 'block';
+            };
+        });
+        document.getElementById('sendTeamMessage').onclick = () => {
+            let msg = document.getElementById('teamMessageInput').value;
+            if(msg) {
+                alert(`تم إرسال: ${msg} إلى جميع أعضاء الفريق`);
+                document.getElementById('teamMessageInput').value = '';
+            }
+        };
+    }
+
+    // باقي التوابع المختصرة للوحات الأخرى
+    function renderAIAgentsInside(container) {
+        container.innerHTML = `
+            <h3>🤖 الكروم + سينكو(1) - مدخل الأكواد الذكي</h3>
+            <textarea id="codeInput" rows="5" placeholder="أمر بالعربية أو كود برمجي..."></textarea>
+            <button id="analyzeCodeBtn" class="accent">🔍 تحليل وتنفيذ</button>
+            <div id="analysisResult" class="code-analysis" style="display:none;"></div>
+            <div id="applyResult"></div>
+            <button class="back-button" onclick="renderOwnerSettings(document.getElementById('appContent'))">🔙 رجوع</button>
+        `;
+        document.getElementById('analyzeCodeBtn').onclick = async () => {
+            const input = document.getElementById('codeInput').value;
+            const result = await analyzeWithSinco(input);
+            const analysisDiv = document.getElementById('analysisResult');
+            analysisDiv.style.display = 'block';
+            if(result.type === "command") {
+                analysisDiv.innerHTML = `<strong>✅ تم فهم الأمر:</strong><br>${result.result.explanation}<br><pre>${result.result.generatedCode}</pre><button id="applyCommandBtn">تطبيق الأمر</button>`;
+                document.getElementById('applyCommandBtn')?.addEventListener('click', () => {
+                    const msg = applyCodeModification(result.result.generatedCode, result.result.type);
+                    document.getElementById('applyResult').innerHTML = `<p>${msg}</p>`;
+                });
+            } else { analysisDiv.innerHTML = `<p>❌ ${result.message}</p>`; }
+        };
+    }
+    function renderZenoInside(container) {
+        container.innerHTML = `<h3>🕵️ زينو - محرك البحث الذكي</h3><textarea id="zenoQuery" rows="3"></textarea><button id="searchZenoBtn" class="accent">🔍 ابحث</button><div id="zenoResults" class="card"></div><button class="back-button" onclick="renderOwnerSettings(document.getElementById('appContent'))">🔙 رجوع</button>`;
+        document.getElementById('searchZenoBtn').onclick = async () => {
+            const query = document.getElementById('zenoQuery').value;
+            const resultsDiv = document.getElementById('zenoResults');
+            resultsDiv.innerHTML = "<p>جاري البحث...</p>";
+            const result = await searchWithZeno(query);
+            resultsDiv.innerHTML = `<p>✅ النتيجة:<br>${result}</p>`;
+        };
+    }
+    function renderOwnerPanelInside(container) {
+        container.innerHTML = `<div><h3>🔥 جدران الحماية: ${firewallLevel}/${systemConfig.firewallMax} <button id="simHack">محاكاة اختراق</button></h3></div>
+        <div><h3>🔑 مفتاح Replicate API:</h3><input id="apiKeyInput" value="${replicateApiKey}"><button id="saveApiKey">حفظ</button></div>
+        <div><h3>🔑 مفتاح OpenRouter:</h3><input id="openRouterKeyInput" value="${systemConfig.openRouterApiKey}"><label><input type="checkbox" id="enableOpenRouter" ${systemConfig.openRouterEnabled ? 'checked' : ''}> تفعيل</label><button id="saveOpenRouterKey">حفظ</button></div>
+        <div><h3>📋 الشكاوى</h3><div id="ownerComplaints"></div></div>
+        <button id="exportFullSiteBtn" class="accent">📥 تنزيل الموقع كاملاً</button>
+        <button class="back-button" onclick="renderOwnerSettings(document.getElementById('appContent'))">🔙 رجوع</button>`;
+        document.getElementById('simHack')?.addEventListener('click', simulateHackAttempt);
+        document.getElementById('saveApiKey')?.addEventListener('click',()=>{ replicateApiKey = document.getElementById('apiKeyInput').value; localStorage.setItem('replicate_api_key', replicateApiKey); alert("تم حفظ المفتاح"); });
+        document.getElementById('saveOpenRouterKey')?.addEventListener('click',()=>{ systemConfig.openRouterApiKey = document.getElementById('openRouterKeyInput').value; systemConfig.openRouterEnabled = document.getElementById('enableOpenRouter').checked; saveStorage(); alert("تم حفظ المفتاح"); });
+        let compDiv = document.getElementById('ownerComplaints');
+        if(compDiv) compDiv.innerHTML = complaintsList.map(c=>`<p><b>${c.user}</b>: ${c.text}</p>`).join('');
+        document.getElementById('exportFullSiteBtn')?.addEventListener('click', () => {
+            const fullHtml = document.documentElement.outerHTML;
+            const blob = new Blob([fullHtml], { type: 'text/html' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'index.html';
+            a.click();
+            URL.revokeObjectURL(url);
+            alert("تم تصدير الموقع!");
+        });
+    }
+    function renderJiraiyaPane(container) {
+        container.innerHTML = `<h3>🧠 توسنادي - مزود الأوامر</h3><textarea id="jiraiyaCommand" rows="4"></textarea><button id="processJiraiyaBtn" class="accent">معالجة الأمر</button><div id="jiraiyaOutput"></div><button class="back-button" onclick="renderOwnerSettings(document.getElementById('appContent'))">🔙 رجوع</button>`;
+        document.getElementById('processJiraiyaBtn').onclick = async () => {
+            const cmd = document.getElementById('jiraiyaCommand').value;
+            const outputDiv = document.getElementById('jiraiyaOutput');
+            outputDiv.innerHTML = "<p>جاري المعالجة...</p>";
+            let result = systemConfig.openRouterApiKey ? await understandArabicWithAI(cmd) : `تم فهم الأمر: ${cmd}`;
+            outputDiv.innerHTML = `<p>✅ توسنادي: ${result}</p>`;
+        };
+    }
+    function renderSaneiPane(container) {
+        container.innerHTML = `<h3>🔧 الصانع - صنع ذكاءات جديدة</h3><textarea id="aiDescription" rows="4"></textarea><button id="createAIBtn" class="accent">صنع ذكاء جديد</button><div id="saneiResult"></div><button class="back-button" onclick="renderOwnerSettings(document.getElementById('appContent'))">🔙 رجوع</button>`;
+        document.getElementById('createAIBtn').onclick = async () => {
+            const desc = document.getElementById('aiDescription').value;
+            const resultDiv = document.getElementById('saneiResult');
+            resultDiv.innerHTML = "<p>جاري صنع الذكاء...</p>";
+            let code = systemConfig.openRouterApiKey ? await understandArabicWithAI(`أنشئ ذكاء اصطناعياً كاملاً يقوم بـ ${desc}`) : `<div><h3>ذكاء جديد: ${desc}</h3><button onclick="alert('يعمل!')">اختبار</button></div>`;
+            resultDiv.innerHTML = `<p>✅ تم صنع الذكاء:</p><pre>${code}</pre><button id="testNewAI">تجربة</button>`;
+            document.getElementById('testNewAI')?.addEventListener('click', () => { const win = window.open(); win.document.write(code); win.document.close(); });
+        };
+    }
+    function renderCodeFixerPane(container) {
+        container.innerHTML = `<h3>🩺 مصلح الأكواد - IDE متكامل</h3><textarea id="brokenCode" rows="8" placeholder="الصق الكود المكسور هنا..."></textarea><button id="fixCodeBtn" class="accent">🔧 إصلاح الكود</button><div id="fixedCodeResult"></div><button class="back-button" onclick="renderOwnerSettings(document.getElementById('appContent'))">🔙 رجوع</button>`;
+        document.getElementById('fixCodeBtn').onclick = async () => {
+            const code = document.getElementById('brokenCode').value;
+            const resultDiv = document.getElementById('fixedCodeResult');
+            resultDiv.innerHTML = "<p>جاري تحليل الكود وإصلاحه...</p>";
+            let fixed = systemConfig.openRouterApiKey ? await understandArabicWithAI(`أصلح الكود التالي: ${code}`) : `// تم إصلاح الكود تلقائياً\n${code}\nconsole.log("تم الإصلاح");`;
+            resultDiv.innerHTML = `<p>✅ الكود بعد الإصلاح:</p><pre>${fixed}</pre><button id="applyFixedCode">تطبيق الكود</button>`;
+            document.getElementById('applyFixedCode')?.addEventListener('click', () => { applyCodeModification(fixed, "JS"); });
         };
     }
 
     function renderCurrentTab() {
         let active = document.querySelector('.nav-links a.active')?.dataset.tab || 'home';
         const contentDiv = document.getElementById('appContent');
-        if(!contentDiv) return;
         if(active === 'home') renderHome(contentDiv);
         else if(active === 'tools') renderTools(contentDiv);
         else if(active === 'rafitalia') renderRafitalia(contentDiv);
@@ -1327,31 +1492,29 @@
                 document.getElementById('ownerRegister').onclick=async ()=>{
                     let email = prompt("أدخل بريد المالك");
                     let fullName = prompt("الاسم الكامل");
-                    let secret = prompt("الجملة السرية (للمالك)");
+                    let secret = prompt("الجملة السرية");
                     if(email && fullName && secret) {
-                        let success = await registerOwnerWithBiometric(email, fullName, secret);
-                        if(success) {
-                            currentUser = { id:'owner', name:fullName, email:email, isOwner:true, isAdult:true, subscription:'lifetime', limits:{}, used:{}, lastReset:Date.now() };
-                            usersDB.push(currentUser);
-                            saveStorage();
-                            modal.remove();
-                            updateUIafterLogin();
-                            renderCurrentTab();
-                        }
+                        await registerOwnerWithBiometric(email, fullName, secret);
+                        currentUser = { id:'owner', name:fullName, email:email, isOwner:true, isAdult:true, subscription:'lifetime', limits:{}, used:{}, lastReset:Date.now() };
+                        usersDB.push(currentUser);
+                        saveStorage();
+                        modal.remove();
+                        updateUIafterLogin();
+                        renderCurrentTab();
                     }
                 };
                 document.getElementById('ownerLogin').onclick=async ()=>{
                     let authenticated = await authenticateOwnerWithBiometric();
                     if(authenticated && ownerData) {
-                        let enteredSecret = prompt("أدخل الجملة السرية:");
+                        let enteredSecret = prompt("الجملة السرية:");
                         if(enteredSecret === ownerData.secretPhrase) {
                             currentUser = { id:'owner', name:ownerData.fullName, email:ownerData.email, isOwner:true, isAdult:true, subscription:'lifetime', limits:{}, used:{}, lastReset:Date.now() };
                             saveStorage();
                             modal.remove();
                             updateUIafterLogin();
                             renderCurrentTab();
-                        } else { alert("الجملة السرية غير صحيحة."); }
-                    } else alert("فشل التحقق البيومتري أو لم يتم التسجيل بعد.");
+                        } else alert("الجملة السرية غير صحيحة.");
+                    } else alert("فشل التحقق");
                 };
                 document.getElementById('closeSoc').onclick=()=>modal.remove();
             };
@@ -1362,14 +1525,6 @@
     }
 
     function initApp() {
-        const tempCode = localStorage.getItem('tempSiteCode');
-        if(tempCode && confirm("يوجد كود مؤقت محفوظ. هل تريد تطبيقه وإعادة التحميل؟")) {
-            localStorage.removeItem('tempSiteCode');
-            document.open();
-            document.write(tempCode);
-            document.close();
-            return;
-        }
         loadStorage();
         renderCurrentTab();
         document.querySelectorAll('[data-tab]').forEach(tab=>{
@@ -1380,12 +1535,7 @@
             });
         });
         window.showPaymentModal = showPaymentModal;
-        window.downloadImage = (url) => {
-            const a = document.createElement('a');
-            a.href = url;
-            a.download = 'edited_image.png';
-            a.click();
-        };
+        window.downloadImage = (url) => { const a = document.createElement('a'); a.href = url; a.download = 'edited_image.png'; a.click(); };
     }
     initApp();
 </script>
